@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --darkPurple: hsl(292, 42%, 14%);
+  --white: hsl(0, 0%, 100%);
+  --lightPink: hsl(275, 100%, 97%);
+  --grayishPurple: hsl(292, 16%, 49%);
+  --hover: rgba(184, 35, 243, 255);
+}
+
+/* 325px mobile */
+/* 600px desktop */
+
+/* 
+- Hide/Show the answer to a question when the question is clicked
+- Navigate the questions and hide/show answers using keyboard navigation alone
+- View the optimal layout for the interface depending on their device's screen size
+- See hover and focus states for all interactive elements on the page 
+*/
+
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "Work Sans";
+  background-color: var(--lightPink);
+}
+
+.bg {
+  background: url(assets/images/background-pattern-mobile.svg);
+  height: 27vh;
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-repeat: no-repeat;
+}
+
+section {
+  margin-top: -100px;
+  width: 325px;
+  padding: 20px;
+  z-index: 2;
+  background-color: var(--white);
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+section .title {
+  display: flex;
+  align-items: center;
+  padding: 5px 0 5px 0;
+  gap: 20px;
+  cursor: pointer;
+}
+
+section .title h2 {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+section .title img {
+  width: 25px;
+  height: 25px;
+}
+
+section .faq .faq-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0 20px 0;
+  font-weight: 400;
+}
+
+section .faq .faq-title h3 {
+  width: 80%;
+  font-size: 16px;
+}
+
+section .faq .faq-title:hover {
+  color: var(--hover);
+}
+
+section .faq .faq-title img {
+  width: 30px;
+  height: 30px;
+}
+
+.faq {
+  border-bottom: 1px solid var(--lightPink);
+}
+
+.faq p {
+  display: none;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--darkPurple);
+  margin-bottom: 20px;
+  font-weight: 400;
+  width: 98%;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.faq:last-child {
+  border: none;
+  margin-bottom: 0;
+}
+
+@media only screen and (min-width: 1440px) {
+  .bg {
+    background: url(assets/images/background-pattern-desktop.svg);
+    height: 30vh;
+    width: 100%;
+  }
+
+  section {
+    width: 600px;
+  }
+}
